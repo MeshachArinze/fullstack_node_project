@@ -4,7 +4,8 @@
   "description": "",
   "main": "intro.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start1": "nodemon fs_sync.js",
+    "start2": "nodemon fs_async.js"
   },
   "keywords": [],
   "author": "",
