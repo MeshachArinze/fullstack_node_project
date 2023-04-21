@@ -7,7 +7,9 @@
     "start1": "nodemon http_basic.js",
     "start2": "nodemon http_app",
     "start3": "nodemon express_basic",
-    "start4": "nodemon express_app"
+    "start4": "nodemon express_app",
+    "start5": "nodemon dbjson.js",
+    "server:start": "json-server --watch db.json --port 3004"
   },
   "keywords": [],
   "author": "",
