@@ -5,7 +5,8 @@
   "main": "intro.js",
   "scripts": {
     "start1": "nodemon fs_sync.js",
-    "start2": "nodemon fs_async.js"
+    "start2": "nodemon fs_async.js",
+    "start3": "nodemon http.js"
   },
   "keywords": [],
   "author": "",
