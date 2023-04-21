@@ -8,6 +8,7 @@ const port = 3000;
 
 const homePage = readFileSync("./navbar-app/index.html");
 const homeStyles = readFileSync("./navbar-app/styles.css");
+const homeProduct = readFileSync("./navbar-app/product.html");
 const homeContact = readFileSync("./navbar-app/contact.html");
 const homeImage = readFileSync("./navbar-app/logo.svg");
 const homeLogic = readFileSync("./navbar-app/browser-app.js");
@@ -16,20 +17,24 @@ const homeLogic = readFileSync("./navbar-app/browser-app.js");
 const server = http.createServer((req, res) => {
   const url = req.url;
 
-  if (url === "/" ) {
+  if (url === "/") {
     res.writeHead(200, { "content-type": "text/html" });
     res.write(homePage);
     res.end();
+  } 
+  
+  else if (url === "/product.html") {
+    res.writeHead(200, { "content-type": "text/html" });
+    res.write(homeProduct);
+    res.end();
 
-
-    
+    // image/logo
   } else if (url === "/contact.html") {
     res.writeHead(200, { "content-type": "text/html" });
     res.write(homeContact);
     res.end();
 
-   // image/logo
-
+    // image/logo
   } else if (url === "/styles.css") {
     res.writeHead(200, { "content-type": "text/css" });
     res.write(homeStyles);
