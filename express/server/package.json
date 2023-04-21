@@ -6,7 +6,8 @@
   "scripts": {
     "start1": "nodemon http_basic.js",
     "start2": "nodemon http_app",
-    "start3": "npx tailwindcss -i ./navbar-app/input.css -o ./dist/output.css --watch"
+    "start3": "nodemon express_basic",
+    "start4": "nodemon express_app"
   },
   "keywords": [],
   "author": "",
