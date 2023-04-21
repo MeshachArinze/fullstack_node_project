@@ -6,12 +6,12 @@ const port = 3000;
 
 // get all files
 
-const homePage = readFileSync("./navbar-app/index.html");
-const homeStyles = readFileSync("./navbar-app/styles.css");
-const homeProduct = readFileSync("./navbar-app/product.html");
-const homeContact = readFileSync("./navbar-app/contact.html");
-const homeImage = readFileSync("./navbar-app/logo.svg");
-const homeLogic = readFileSync("./navbar-app/browser-app.js");
+const homePage = readFileSync("./cloth_web_app/index.html");
+const homeStyles = readFileSync("./cloth_web_app/styles.css");
+const homeProduct = readFileSync("./cloth_web_app/product.html");
+const homeContact = readFileSync("./cloth_web_app/contact.html");
+const homeImage = readFileSync("./cloth_web_app/logo.svg");
+const homeLogic = readFileSync("./cloth_web_app/browser-app.js");
 
 
 const server = http.createServer((req, res) => {
