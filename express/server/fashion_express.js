@@ -9,7 +9,15 @@ const app = express()
 app.use(express.static("./public"));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './cloth_web_app/index.html'))
+    res.sendFile(path.resolve(__dirname, './fashion/index.html'))
+})
+
+app.use('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './fashion/styles.css'))
+});
+
+app.use('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './fashion/browser-app.js'));
 })
 
 app.all('*', (req, res) => {
