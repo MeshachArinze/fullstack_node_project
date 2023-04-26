@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start1": "nodemon http_basic.js",
-    "start2": "nodemon http_app",
+    "start2": "nodemon fashion_node.js",
     "start3": "nodemon express_basic",
-    "start4": "nodemon express_app",
+    "start4": "nodemon fashion_express",
     "start5": "nodemon dbjson.js",
     "start6": "nodemon params_query.js",
+    "start7": "nodemon middleware.js",
     "server:start": "json-server --watch ../server/db.json --port 3004"
   },
   "keywords": [],
