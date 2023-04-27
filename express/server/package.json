@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:cal": "nodemon calculator_node.js",
     "start:webhook": "nodemon webhook.js",
     "start:api": "nodemon api.js",
     "start1": "nodemon http_basic.js",
@@ -14,6 +13,7 @@
     "start5": "nodemon dbjson.js",
     "start6": "nodemon params_query.js",
     "start7": "nodemon middleware.js",
+    "product": "nodemon product_node.js",
     "server:start": "json-server --watch ../server/db.json --port 3004"
   },
   "keywords": [],
