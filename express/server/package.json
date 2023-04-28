@@ -6,6 +6,7 @@
   "scripts": {
     "start:webhook": "nodemon webhook.js",
     "start:api": "nodemon api.js",
+    "router": "nodemon router_app.js",
     "start1": "nodemon http_basic.js",
     "start2": "nodemon fashion_node.js",
     "start3": "nodemon express_basic",
