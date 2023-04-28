@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const logger = require("./logger");
-const authorize = require("./authorize");
+
+const hostname = "127.0.0.1";
+const port = 3000;
+
 //  req => middleware => res
 
 // app.use([logger, authorize])
@@ -23,6 +25,15 @@ app.get("/api/items", (req, res) => {
   res.send("Items");
 });
 
-app.listen(5000, () => {
-  console.log("Server is listening on port 5000....");
+app.use("*", (req, res) => {
+  res.sendStatus(401).send('page not found');
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
