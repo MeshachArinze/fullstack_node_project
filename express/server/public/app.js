@@ -1,4 +1,20 @@
+window.onscroll = function() {
+    onScroll();
+}
+
+let navbar = document.getElementById("navbar");
+let sticky = navbar.offsetTop;
+
+function onScroll() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
 const result = document.querySelector(".result");
+
 
 const fetchPeople = async () => {
   try {
