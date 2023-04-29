@@ -10,28 +10,32 @@ const app = express();
 // app.use(express.static("./public"));
 app.use(express.static("./ecommerce"));
 
+app.use(express.urlencoded({ extended: false }));
+
+app.use(express.json());
+
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./ecommerce/index.html"));
+  res.status(200).sendFile(path.resolve(__dirname, "./ecommerce/index.html"));
 });
 
 app.use("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./ecommerce/styles.css"));
+  res.status(201).sendFile(path.resolve(__dirname, "./ecommerce/styles.css"));
 });
 
 app.use("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./ecommerce/nav.js"));
+  res.status(201).sendFile(path.resolve(__dirname, "./ecommerce/nav.js"));
 });
 
 app.use("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./ecommerce/home.js"));
+  res.status(201).sendFile(path.resolve(__dirname, "./ecommerce/home.js"));
 });
 
 app.use("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./ecommerce/product.js"));
+  res.status(201).sendFile(path.resolve(__dirname, "./ecommerce/product.js"));
 });
 
 app.use("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./ecommerce/footer.js"));
+  res.status(201).sendFile(path.resolve(__dirname, "./ecommerce/footer.js"));
 });
 
 app.all("*", (req, res) => {
