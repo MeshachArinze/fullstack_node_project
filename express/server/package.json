@@ -19,7 +19,7 @@
     "start10": "nodemon methods.js",
     "product": "nodemon product_node.js",
     "ecommerce": "nodemon ecommerce.js",
-    "disney": "nodemon disney.js",
+    "server": "nodemon server.js",
     "server:start": "json-server --watch ../server/db.json --port 3004"
   },
   "keywords": ["HTML, CSS, JS"],
