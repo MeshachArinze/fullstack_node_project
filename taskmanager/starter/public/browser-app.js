@@ -8,7 +8,7 @@ const tasksDOM = document.querySelector(".tasks"),
 
 // load tasks from /api/tasks
 
-const showTask = async () => {
+const showTasks = async () => {
   loadingDOM.style.visibility = "visible";
 
   try {
@@ -23,9 +23,10 @@ const showTask = async () => {
       return;
     }
 
-    const allTasks = tasks.map((task) => {
-      const { completed, _id: taskID, name } = task;
-      return `<div class="single-task ${completed && "task-completed"}">
+    const allTasks = tasks
+      .map((task) => {
+        const { completed, _id: taskID, name } = task;
+        return `<div class="single-task ${completed && "task-completed"}">
 <h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
 <div class="task-links">
       
@@ -39,23 +40,49 @@ const showTask = async () => {
 </button>
 </div>
 </div>`;
-    }).join('');
+      })
+      .join("");
     tasksDOM.innerHTML = allTasks;
   } catch (error) {
     tasksDOM.innerHTML =
       '<h5 class="empty-list">There was an error, please try later....</h5>';
   }
 
-  loadingDOM.style.visibility = 'hidden'
+  loadingDOM.style.visibility = "hidden";
 };
 
-showTask();
+showTasks();
 
-tasksDOM.addEventListener('click', async (e) => {
-    const el = e.target;
+tasksDOM.addEventListener("click", async (e) => {
+  const el = e.target;
 
-    if (el.parentElement.classList.contains('delete-btn')) {
-           loadingDOM.style.visibility = 'visible'
-    const id = el.parentElement.dataset.id
+  if (el.parentElement.classList.contains("delete-btn")) {
+    loadingDOM.style.visibility = "visible";
+    const id = el.parentElement.dataset.id;
+
+    try {
+      await axios.delete(`/api/v1/tasks/${id}`);
+      showTasks();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+    loadingDOM.style.visibility = "hidden";
+});
+
+formDOM.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = taskInputDOM.value;
+
+    try {
+        await axios.post("/api/v1/tasks", { name });
+        showTasks();
+        taskInputDOM.value = "";
+        formAlertDOM.style.display = "block";
+        formAlertDOM.textContent = `success, task added`;
+        formAlertDOM.classList.add("text-success");
+    } catch (error) {
+        
     }
 })
