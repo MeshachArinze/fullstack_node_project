@@ -50,3 +50,12 @@ const showTask = async () => {
 };
 
 showTask();
+
+tasksDOM.addEventListener('click', async (e) => {
+    const el = e.target;
+
+    if (el.parentElement.classList.contains('delete-btn')) {
+           loadingDOM.style.visibility = 'visible'
+    const id = el.parentElement.dataset.id
+    }
+})
